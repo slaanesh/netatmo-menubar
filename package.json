@@ -1,0 +1,57 @@
+{
+  "name": "netatmo-menubar",
+  "version": "0.1.0",
+  "license": "GPL-2.0-only",
+  "homepage": "./",
+  "main": "src/main.js",
+  "build": {
+    "appId": "com.slaanesh.netatmo-menubar",
+    "win": {
+      "iconUrl": "assets/icons/png/512x512.png"
+    },
+    "directories": {
+      "buildResources": "public"
+    }
+  },
+  "dependencies": {
+    "electron": "^4.1.0",
+    "eslint": "^5.12.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.12.4",
+    "keytar": "^4.4.1",
+    "netatmo": "^2.2.2",
+    "react": "^16.8.4",
+    "react-desktop": "^0.3.9",
+    "react-dom": "^16.8.4",
+    "react-scripts": "2.1.8",
+    "typescript": "^3.3.3333"
+  },
+  "scripts": {
+    "start": "nf start -p 3000",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "electron": "electron --inspect=5858 --remote-debugging-port=9223 .",
+    "electron-start": "node src/start-react",
+    "electron-rebuild": "./node_modules/.bin/electron-rebuild",
+    "react-start": "BROWSER=none react-scripts start",
+    "pack": "build --dir",
+    "dist": "npm run build && build",
+    "postinstall": "install-app-deps"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "devDependencies": {
+    "electron-builder": "^20.39.0",
+    "electron-rebuild": "^1.8.4"
+  }
+}
